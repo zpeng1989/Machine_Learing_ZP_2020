@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 from sklearn.covariance import EllipticEnvelope
 from sklearn.datasets import make_blobs
@@ -26,4 +27,23 @@ def indicies_of_outliers(x):
     return np.where((x>high_bound)|(x < lower_bound))
 
 print(indicies_of_outliers(feature))
+
+
+
+######
+
+houses = pd.DataFrame()
+houses['Price'] = [43245,53242,13234,432455]
+houses['Bathrooms'] = [2, 3.5, 2, 116]
+houses['Square_Feet'] = [1500, 2500, 1500, 48000]
+
+print(houses[houses['Bathrooms']<20])
+
+houses["Outlizer"] = np.where(houses['Bathrooms']<20, 0, 1)
+houses["Log_Of_Square_Feet"] = [np.log(x) for x in houses["Square_Feet"]]
+
+print(houses)
+
+
+
 
