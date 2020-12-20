@@ -21,8 +21,16 @@ dataframe['month'] = dataframe['date'].dt.month
 dataframe['day'] = dataframe['date'].dt.day
 print(dataframe.head())
 
+dataframe = pd.DataFrame()
 
+dataframe['Arrived'] = [pd.Timestamp('01-01-2017'), pd.Timestamp('01-04-2017')]
+dataframe['Left'] = [pd.Timestamp('01-01-2017'), pd.Timestamp('01-06-2017')]
 
+print(dataframe['Left']-dataframe['Arrived'])
 
+dates = pd.Series(pd.date_range("2/2/2002", periods = 3, freq="M"))
+
+#print(dates.dt.weekday_name)
+print(dates.dt.weekday)
 
 
