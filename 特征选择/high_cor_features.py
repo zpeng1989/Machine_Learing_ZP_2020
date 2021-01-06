@@ -12,3 +12,6 @@ to_drop = [column for column in upper.columns if any(upper[column] > 0.95)]
 
 print(dataframe.drop(dataframe.columns[to_drop], axis = 1).head(3))
 
+print(dataframe.corr())
+
+print(upper)
