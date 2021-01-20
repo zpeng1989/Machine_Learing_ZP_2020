@@ -25,3 +25,5 @@ new_observation = [[.5, .5, .5, .5]]
 print(model.predict(new_observation))
 print(model.predict_proba(new_observation))
 
+
+
