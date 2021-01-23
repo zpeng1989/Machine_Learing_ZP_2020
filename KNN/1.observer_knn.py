@@ -17,4 +17,9 @@ print(features_standardizer[indices])
 print(distance)
 
 nearest_neighbors_euclidean = NearestNeighbors(n_neighbors=2, metric='euclidean').fit(features_standardizer)
-nearest_neighbors
+nearest_neighbors_with_self = nearest_neighbors_euclidean.kneighbors_graph(features_standardizer).toarry()
+
+for i,x in enumerate(nearest_neighbors_with_self):
+    x[i] = 0
+
+print(nearest_neighbors_with_self[0])
