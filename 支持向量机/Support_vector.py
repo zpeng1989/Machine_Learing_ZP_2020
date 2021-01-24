@@ -16,3 +16,4 @@ model = svc.fit(features_standardized, target)
 print(model.support_vectors_)
 print(model.support_)
 print(model.n_support_)
+
